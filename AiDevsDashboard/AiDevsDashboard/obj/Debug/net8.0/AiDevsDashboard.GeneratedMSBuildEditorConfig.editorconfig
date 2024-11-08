@@ -9,51 +9,51 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AiDevsDashboard
 build_property.RootNamespace = AiDevsDashboard
-build_property.ProjectDir = C:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard\
+build_property.ProjectDir = c:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard
+build_property.MSBuildProjectDirectory = c:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/App.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Counter.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Dashboard.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Dashboard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Error.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Home.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Weather.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Routes.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/_Imports.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Layout/MainLayout.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-zee10a93ow
 
-[C:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Layout/NavMenu.razor]
+[c:/Projects/MyAgent/AiDevsDashboard/AiDevsDashboard/AiDevsDashboard/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-oxjzc0cklc

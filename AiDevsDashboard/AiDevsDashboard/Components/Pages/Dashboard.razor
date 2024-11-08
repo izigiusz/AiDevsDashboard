@@ -1,7 +1,9 @@
 @page "/dashboard"
 @using System.Text.Json
+@using System.Web
 @inject IOpenAIService OpenAIService
 @inject IFileService FileService
+@inject IJsonPostService JsonPostService
 
 <div class="container mt-4">
     <div class="d-flex justify-content-end mb-3">
@@ -117,18 +119,18 @@
                 text2 = "Błąd: Brak klucza AGENTS_KEY w zmiennych środowiskowych";
                 return;
             }
-            
+
             var url = $"https://centrala.ag3nts.org/data/{key}/json.txt";
             var jsonDoc = await FileService.GetFileFromUrl(url);
-            
+
             if (jsonDoc == null)
             {
                 text2 = "Błąd: Otrzymano pusty dokument JSON";
                 return;
             }
-            
+
             var root = jsonDoc.RootElement;
-            
+
             var resultObject = new Dictionary<string, JsonElement>();
             foreach (var property in root.EnumerateObject())
             {
@@ -141,9 +143,11 @@
                     var testDataArray = property.Value.EnumerateArray()
                         .Select<JsonElement, Task<object>>(async item =>
                         {
-                            var question = item.GetProperty("question").GetString();
+                            var question = JsonSerializer.Deserialize<string>(
+                                JsonSerializer.Serialize(item.GetProperty("question").GetString())
+                            );
                             var answer = item.GetProperty("answer").GetInt32();
-                            
+
                             // Parsowanie i obliczanie wyniku
                             var numbers = question?.Split('+')
                                 .Select(n => int.Parse(n.Trim()))
@@ -156,7 +160,7 @@
                                 var testQuestion = testElement.GetProperty("q").GetString();
                                 var aiAnswer = await OpenAIService.CompleteChat(
                                     "Answer the question in one word without any additional information or punctuation marks: " + testQuestion);
-                                
+
                                 return new
                                 {
                                     question,
@@ -168,7 +172,7 @@
                                     }
                                 };
                             }
-                            
+
                             return new
                             {
                                 question,
@@ -187,13 +191,31 @@
                 }
             }
 
-            text2 = JsonSerializer.Serialize(resultObject, new JsonSerializerOptions { WriteIndented = true });
-            
+            text2 = JsonSerializer.Serialize(resultObject, new JsonSerializerOptions { 
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            });
+
+            var response = new
+            {
+                task = "JSON",
+                apikey = key,
+                answer = resultObject
+            };
+
+            var jsonResponse = JsonSerializer.Serialize(response, new JsonSerializerOptions { 
+                WriteIndented = true,
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            });
+            text2 = jsonResponse;
+            var result = await JsonPostService.PostJsonAsync("https://centrala.ag3nts.org/report", jsonResponse);
+            text1 = result; // pokazujemy rezultat w text1
+
             StateHasChanged();
         }
         catch (Exception ex)
         {
-            text2 = $"Wystąpił błąd: {ex.Message}";
+            text1 = $"Wystąpił błąd: {ex.Message}";
             StateHasChanged();
         }
     }

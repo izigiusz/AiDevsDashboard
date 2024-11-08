@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AiDevsDashboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6e172d591d787cdcd3df90c5e29773d8df6eaf1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e286d48f79d384476eb900f61cd8c6374c8902d")]
 [assembly: System.Reflection.AssemblyProductAttribute("AiDevsDashboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AiDevsDashboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
