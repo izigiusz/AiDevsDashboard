@@ -16,6 +16,7 @@ namespace AiDevsDashboard
 			builder.Services.AddHttpClient();
 			builder.Services.AddScoped<IFileService, FileService>();
 			builder.Services.AddScoped<IOpenAIService, OpenAIService>();
+			builder.Services.AddScoped<IJsonPostService, JsonPostService>();
 
 			var app = builder.Build();
 

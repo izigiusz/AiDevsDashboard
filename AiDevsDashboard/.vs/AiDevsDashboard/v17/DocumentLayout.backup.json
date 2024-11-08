@@ -48,9 +48,10 @@
               "RelativeDocumentMoniker": "AiDevsDashboard\\Services\\FileService.cs",
               "ToolTip": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\AiDevsDashboard\\Services\\FileService.cs",
               "RelativeToolTip": "AiDevsDashboard\\Services\\FileService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwBQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:05:33.643Z"
+              "WhenOpened": "2024-11-08T19:05:33.643Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -72,7 +73,7 @@
               "RelativeDocumentMoniker": "AiDevsDashboard\\Components\\Pages\\Dashboard.razor",
               "ToolTip": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\AiDevsDashboard\\Components\\Pages\\Dashboard.razor",
               "RelativeToolTip": "AiDevsDashboard\\Components\\Pages\\Dashboard.razor",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAgwIgAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-08T17:57:45.822Z",
               "EditorCaption": ""

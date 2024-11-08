@@ -1,4 +1,5 @@
 @page "/dashboard"
+@using System.Text.Json
 @inject IOpenAIService OpenAIService
 @inject IFileService FileService
 
@@ -119,6 +120,74 @@
             
             var url = $"https://centrala.ag3nts.org/data/{key}/json.txt";
             var jsonDoc = await FileService.GetFileFromUrl(url);
+            
+            if (jsonDoc == null)
+            {
+                text2 = "Błąd: Otrzymano pusty dokument JSON";
+                return;
+            }
+            
+            var root = jsonDoc.RootElement;
+            
+            var resultObject = new Dictionary<string, JsonElement>();
+            foreach (var property in root.EnumerateObject())
+            {
+                if (property.Name == "apikey" && property.Value.GetString() == "%PUT-YOUR-API-KEY-HERE%")
+                {
+                    resultObject[property.Name] = JsonSerializer.SerializeToElement(key);
+                }
+                else if (property.Name == "test-data")
+                {
+                    var testDataArray = property.Value.EnumerateArray()
+                        .Select<JsonElement, Task<object>>(async item =>
+                        {
+                            var question = item.GetProperty("question").GetString();
+                            var answer = item.GetProperty("answer").GetInt32();
+                            
+                            // Parsowanie i obliczanie wyniku
+                            var numbers = question?.Split('+')
+                                .Select(n => int.Parse(n.Trim()))
+                                .ToArray();
+                            var correctAnswer = numbers?[0] + numbers?[1];
+
+                            // Sprawdzanie czy istnieje właściwość "test"
+                            if (item.TryGetProperty("test", out JsonElement testElement))
+                            {
+                                var testQuestion = testElement.GetProperty("q").GetString();
+                                var aiAnswer = await OpenAIService.CompleteChat(
+                                    "Answer the question in one word without any additional information or punctuation marks: " + testQuestion);
+                                
+                                return new
+                                {
+                                    question,
+                                    answer = correctAnswer,
+                                    test = new
+                                    {
+                                        q = testQuestion,
+                                        a = aiAnswer
+                                    }
+                                };
+                            }
+                            
+                            return new
+                            {
+                                question,
+                                answer = correctAnswer
+                            };
+                        })
+                        .ToArray();
+
+                    // Czekamy na zakończenie wszystkich zadań asynchronicznych
+                    var results = await Task.WhenAll(testDataArray);
+                    resultObject[property.Name] = JsonSerializer.SerializeToElement(results);
+                }
+                else
+                {
+                    resultObject[property.Name] = property.Value.Clone();
+                }
+            }
+
+            text2 = JsonSerializer.Serialize(resultObject, new JsonSerializerOptions { WriteIndented = true });
             
             StateHasChanged();
         }
