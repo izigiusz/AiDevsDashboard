@@ -1,7 +1,104 @@
 @page "/dashboard"
+@inject IOpenAIService OpenAIService
 
-<PageTitle>Dashboard</PageTitle>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="textArea1" class="form-label">Input Prompt</label>
+                <textarea 
+                    id="textArea1" 
+                    class="form-control" 
+                    rows="5"
+                    value="@text1"
+                    @onchange="@(e => text1 = e.Value?.ToString() ?? string.Empty)">
+                </textarea>
+            </div>
+            
+            <div class="mb-3">
+                <div class="d-flex gap-2">
+                    <button type="button" 
+                            class="btn btn-primary flex-grow-1" 
+                            @onclick="HandleSend" 
+                            disabled="@isProcessing">
+                        @if (isProcessing)
+                        {
+                            <span class="spinner-border spinner-border-sm me-2"></span>
+                            <span>Processing...</span>
+                        }
+                        else
+                        {
+                            <span>Send</span>
+                        }
+                    </button>
+                    <button type="button" 
+                            class="btn btn-secondary" 
+                            @onclick="HandleClear">
+                        Clear
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="textArea2" class="form-label">Output</label>
+                <textarea 
+                    id="textArea2" 
+                    class="form-control" 
+                    rows="5"
+                    value="@text2"
+                    readonly>
+                </textarea>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>Dashboard</h1>
+<style>
+    .btn {
+        transition: all 0.2s ease;
+    }
 
-<p>Welcome to the AI Dashboard!</p> 
+    .btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn:active:not(:disabled) {
+        transform: translateY(0);
+    }
+</style>
+
+@code {
+    private string text1 = string.Empty;
+    private string text2 = string.Empty;
+    private bool isProcessing = false;
+
+    private async Task HandleSend()
+    {
+        try
+        {
+            if (string.IsNullOrWhiteSpace(text1) || isProcessing)
+                return;
+
+            isProcessing = true;
+            StateHasChanged();
+            text2 = await OpenAIService.CompleteChat(text1);
+        }
+        catch (Exception ex)
+        {
+            text2 = $"Wystąpił błąd: {ex.Message}";
+        }
+        finally
+        {
+            isProcessing = false;
+            StateHasChanged();
+        }
+    }
+
+    private void HandleClear()
+    {
+        text1 = string.Empty;
+        text2 = string.Empty;
+        StateHasChanged();
+    }
+} 

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0CEB4ABD-1F01-4398-946C-DBD99B1166DE}|AiDevsDashboard\\AiDevsDashboard.csproj|c:\\projects\\myagent\\aidevsdashboard\\aidevsdashboard\\aidevsdashboard\\components\\pages\\dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0CEB4ABD-1F01-4398-946C-DBD99B1166DE}|AiDevsDashboard\\AiDevsDashboard.csproj|solutionrelative:aidevsdashboard\\components\\pages\\dashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CEB4ABD-1F01-4398-946C-DBD99B1166DE}|AiDevsDashboard\\AiDevsDashboard.csproj|c:\\projects\\myagent\\aidevsdashboard\\aidevsdashboard\\aidevsdashboard\\services\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CEB4ABD-1F01-4398-946C-DBD99B1166DE}|AiDevsDashboard\\AiDevsDashboard.csproj|solutionrelative:aidevsdashboard\\services\\openaiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CEB4ABD-1F01-4398-946C-DBD99B1166DE}|AiDevsDashboard\\AiDevsDashboard.csproj|c:\\projects\\myagent\\aidevsdashboard\\aidevsdashboard\\aidevsdashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CEB4ABD-1F01-4398-946C-DBD99B1166DE}|AiDevsDashboard\\AiDevsDashboard.csproj|solutionrelative:aidevsdashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +38,39 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\AiDevsDashboard\\Program.cs",
+              "RelativeDocumentMoniker": "AiDevsDashboard\\Program.cs",
+              "ToolTip": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\AiDevsDashboard\\Program.cs",
+              "RelativeToolTip": "AiDevsDashboard\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:00:57.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Dashboard.razor",
+              "DocumentMoniker": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\AiDevsDashboard\\Components\\Pages\\Dashboard.razor",
+              "RelativeDocumentMoniker": "AiDevsDashboard\\Components\\Pages\\Dashboard.razor",
+              "ToolTip": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\AiDevsDashboard\\Components\\Pages\\Dashboard.razor",
+              "RelativeToolTip": "AiDevsDashboard\\Components\\Pages\\Dashboard.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T17:57:45.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "OpenAIService.cs",
               "DocumentMoniker": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\AiDevsDashboard\\Services\\OpenAIService.cs",
               "RelativeDocumentMoniker": "AiDevsDashboard\\Services\\OpenAIService.cs",
               "ToolTip": "C:\\Projects\\MyAgent\\AiDevsDashboard\\AiDevsDashboard\\AiDevsDashboard\\Services\\OpenAIService.cs",
               "RelativeToolTip": "AiDevsDashboard\\Services\\OpenAIService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAQwBMAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T17:02:32.99Z",
               "EditorCaption": ""

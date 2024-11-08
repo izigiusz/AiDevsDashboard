@@ -32,3 +32,4 @@ C:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard\bin\Debug\ne
 C:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard\obj\Debug\net8.0\AiDevsDashboard.csproj.AssemblyReference.cache
 C:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard\obj\Debug\net8.0\AiDevsDa.2D2018FE.Up2Date
+C:\Projects\MyAgent\AiDevsDashboard\AiDevsDashboard\AiDevsDashboard\obj\Debug\net8.0\AiDevsDashboard.sourcelink.json
