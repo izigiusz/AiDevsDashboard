@@ -1,7 +1,11 @@
 @page "/dashboard"
 @inject IOpenAIService OpenAIService
+@inject IFileService FileService
 
 <div class="container mt-4">
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-primary" @onclick="ProcessS01E03">S01E03</button>
+    </div>
     <div class="row">
         <div class="col-6">
             <div class="mb-3">
@@ -100,5 +104,28 @@
         text1 = string.Empty;
         text2 = string.Empty;
         StateHasChanged();
+    }
+
+    private async Task ProcessS01E03()
+    {
+        try
+        {
+            var key = Environment.GetEnvironmentVariable("TWOJ-KLUCZ");
+            if (string.IsNullOrEmpty(key))
+            {
+                text2 = "Błąd: Brak klucza AGENTS_KEY w zmiennych środowiskowych";
+                return;
+            }
+            
+            var url = $"https://centrala.ag3nts.org/data/{key}/json.txt";
+            var jsonDoc = await FileService.GetFileFromUrl(url);
+            
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            text2 = $"Wystąpił błąd: {ex.Message}";
+            StateHasChanged();
+        }
     }
 } 

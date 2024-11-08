@@ -13,6 +13,8 @@ namespace AiDevsDashboard
 				.AddInteractiveServerComponents();
 
 			// Dodajemy rejestrację serwisu OpenAI
+			builder.Services.AddHttpClient();
+			builder.Services.AddScoped<IFileService, FileService>();
 			builder.Services.AddScoped<IOpenAIService, OpenAIService>();
 
 			var app = builder.Build();
